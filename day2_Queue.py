@@ -1,4 +1,5 @@
 class Node:
+
     def __init__(self, item):
         self.data = item
         self.prev = None
@@ -6,7 +7,8 @@ class Node:
 
 
 class DoublyLinkedList:
-    def __init__(self, item):
+
+    def __init__(self):
         self.nodeCount = 0
         self.head = Node(None)
         self.tail = Node(None)
@@ -26,7 +28,6 @@ class DoublyLinkedList:
             s += repr(curr.data)
             if curr.next.next is not None:
                 s += ' -> '
-
         return s
 
     def getLength(self):
@@ -35,18 +36,37 @@ class DoublyLinkedList:
     def traverse(self):
         result = []
         curr = self.head
-        while curr.next.next:  # tail 도 dummy node가 존재 하기 때문에
+        while curr.next.next:
             curr = curr.next
             result.append(curr.data)
         return result
 
-    def revers(self):
+    def reverse(self):
         result = []
         curr = self.tail
         while curr.prev.prev:
             curr = curr.prev
             result.append(curr.data)
         return result
+
+    def getAt(self, pos):
+        if pos < 0 or pos > self.nodeCount:
+            return None
+
+        if pos > self.nodeCount // 2:
+            i = 0
+            curr = self.tail
+            while i < self.nodeCount - pos + 1:
+                curr = curr.prev
+                i += 1
+        else:
+            i = 0
+            curr = self.head
+            while i < pos:
+                curr = curr.next
+                i += 1
+
+        return curr
 
     def insertAfter(self, prev, newNode):
         next = prev.next
@@ -56,34 +76,6 @@ class DoublyLinkedList:
         next.prev = newNode
         self.nodeCount += 1
         return True
-
-    def insertBefore(self, next, newNode):
-        prev = next.prev
-        newNode.prev = prev
-        newNode.next = next
-        prev.next = newNode
-        next.prev = newNode
-        self.nodeCount += 1
-        return True
-
-    def getAt(self, pos):
-        if pos < 0 or pos > self.nodeCount:
-            return None
-        if pos > self.nodeCount // 2:  #pos가 뒤쪽과 가까운 위치일 경우 뒤쪽에서부터 찾기 위해
-            i = 0
-            curr = self.tail
-            while i < self.nodeCount - pos + 1:
-                curr = curr.prev
-                i += 1
-
-        else:
-            i = 0  # dummy node가 생기면서 i = 1 번째가 아니라 i = 0 으로 바뀜
-            curr = self.head
-            while i < pos:
-                curr = curr.next
-                i += 1
-
-        return curr
 
     def insertAt(self, pos, newNode):
         if pos < 1 or pos > self.nodeCount + 1:
@@ -95,31 +87,70 @@ class DoublyLinkedList:
     def popAfter(self, prev):
         curr = prev.next
         next = curr.next
-        data = curr.data
         prev.next = next
         next.prev = prev
         self.nodeCount -= 1
-        return data
-
-    def popBefore(self, next):
-        curr = next.prev
-        prev = curr.prev
-        data = curr.data
-        prev.next = next
-        next.prev = prev
-        self.nodeCount -= 1
-        return data
+        return curr.data
 
     def popAt(self, pos):
         if pos < 1 or pos > self.nodeCount:
-            raise IndexError
+            raise IndexError('Index out of range')
+
         prev = self.getAt(pos - 1)
         return self.popAfter(prev)
 
     def concat(self, L):
         self.tail.prev.next = L.head.next
         L.head.next.prev = self.tail.prev
-        if L.tail:
-            self.tail = L.tail
+        self.tail = L.tail
+
         self.nodeCount += L.nodeCount
 
+
+class LinkedListQueue:
+
+    def __init__(self):
+        self.data = DoublyLinkedList()
+
+    def size(self):
+        return self.data.nodeCount
+
+    def isEmpty(self):
+        return self.size() == 0
+
+    def enqueue(self, item):
+        node = Node(item)
+        self.data.insertAt(1, node)
+
+    def dequeue(self):
+        return self.data.popAt(self.queue.getLength())
+
+    def peek(self):
+        return self.data.getAt(self.queue.getLength()).data
+
+
+class ArrayQueue:
+
+    def __init__(self):
+        self.data = []
+
+    def size(self):
+        return len(self.data)
+
+    def isEmpty(self):
+        return self.size() == 0
+
+    def enqueue(self, item):
+        self.data.append(item)
+
+    def dequeue(self):
+        return self.data.pop(0)             # 가장 먼저 들어간 리스트 0번째 원소를 pop해 리턴
+
+    def peek(self):
+        return self.data[0]
+
+
+q = LinkedListQueue()
+q.enqueue(8)
+
+print(q.data)

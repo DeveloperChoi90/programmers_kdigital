@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b65bee78-25b1-4bcf-b762-b1dfe7358631" name="Default Changelist" comment="" />
+    <list default="true" id="b65bee78-25b1-4bcf-b762-b1dfe7358631" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/day2_BinSearchTree.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day2_BinaryTree.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day2_MaxHeap.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day2_Queue.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day2_budgetSort.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day2_circularQueue.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day2_postfix.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day2_postfixEval.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day2_priorityQueue.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day3_BigDigit.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day3_greedy.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day3_greedyBigNumber.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day3_hashTableProblem.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day4_dynamincProgrammingProblem.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day4_moreHot.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day4_travelSchedule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day1_doublyLinkedLists.py" beforeDir="false" afterPath="$PROJECT_DIR$/day1_doublyLinkedLists.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,8 +66,8 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Python.day1_transferTruck">
-    <configuration name="day1_remainPoint" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.day3_BigDigit">
+    <configuration name="day2_Queue" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="programmers_kdigital" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -60,7 +79,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day1_remainPoint.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day2_Queue.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -69,7 +88,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="day1_transferTruck" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="day2_budgetSort" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="programmers_kdigital" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -81,7 +100,70 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day1_transferTruck.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day2_budgetSort.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="day2_postfix" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="programmers_kdigital" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day2_postfix.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="day2_postfixEval" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="programmers_kdigital" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day2_postfixEval.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="day3_BigDigit" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="programmers_kdigital" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day3_BigDigit.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -92,8 +174,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.day1_transferTruck" />
-        <item itemvalue="Python.day1_remainPoint" />
+        <item itemvalue="Python.day3_BigDigit" />
+        <item itemvalue="Python.day2_budgetSort" />
+        <item itemvalue="Python.day2_Queue" />
+        <item itemvalue="Python.day2_postfixEval" />
+        <item itemvalue="Python.day2_postfix" />
       </list>
     </recent_temporary>
   </component>
