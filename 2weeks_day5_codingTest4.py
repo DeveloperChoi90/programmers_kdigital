@@ -25,6 +25,56 @@
 
 
 def solution(arr):
-    answer = 1
-    return answer
+    L = len(arr)
+    N = L // 2 + 1
+    dp_max = [[float('-inf')] * N for _ in range(N)]
+    dp_min = [[float('inf')] * N for _ in range(N)]
+    for i in range(N):
+        dp_max[i][i] = int(arr[i * 2])
+        dp_min[i][i] = int(arr[i * 2])
+    for c in range(1, N):
+        for i in range(N - c):
+            j = c + i
+            for k in range(j - i):
+                if arr[2 * (i + k) + 1] == '-':
+                    dp_max[i][j] = max(dp_max[i][i + k] - dp_min[i + k + 1][j], dp_max[i][j])
+                    dp_min[i][j] = min(dp_min[i][i + k] - dp_min[i + k + 1][j], dp_min[i][j])
+                elif arr[2 * (i + k) + 1] == '+':
+                    dp_max[i][j] = max(dp_max[i][i + k] + dp_max[i + k + 1][j], dp_max[i][j])
+                    dp_min[i][j] = min(dp_min[i][i + k] + dp_min[i + k + 1][j], dp_min[i][j])
+    return dp_max[0][N - 1]
 
+
+def solution2(arr):
+    n = len(arr)
+    arr = [int(x) if x.isdigit() else x for x in arr]
+    dp_max = [[None] * n for _ in range(n)]
+    dp_min = [[None] * n for _ in range(n)]
+
+    def solve(a, b, minmax):
+        dp = dp_max if minmax == "max" else dp_min
+
+        if dp[a][b] is not None:
+            return dp[a][b]
+
+        if a == b:
+            dp[a][b] = arr[a]
+            return dp[a][b]
+
+        else:
+            ret = -float("inf") if minmax == "max" else float("inf")
+
+            for i in range(a, b, 2):
+                if arr[i + 1] == "+" and minmax == "max":
+                    ret = max(ret, solve(a, i, "max") + solve(i + 2, b, "max"))
+                elif arr[i + 1] == "+" and minmax == "min":
+                    ret = min(ret, solve(a, i, "min") + solve(i + 2, b, "min"))
+                elif arr[i + 1] == "-" and minmax == "max":
+                    ret = max(ret, solve(a, i, "max") - solve(i + 2, b, "min"))
+                elif arr[i + 1] == "-" and minmax == "min":
+                    ret = min(ret, solve(a, i, "min") - solve(i + 2, b, "max"))
+
+            dp[a][b] = ret
+            return dp[a][b]
+
+    return solve(0, n - 1, "max")
